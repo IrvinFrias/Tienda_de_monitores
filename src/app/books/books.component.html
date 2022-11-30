@@ -1,0 +1,26 @@
+<h1>Dell Monitors List!</h1>
+<button type="button" (click)="handleClick()" [disabled]="isDisable">Show Dell monitors</button>
+<input type="text" [(ngModel)]="inputName" />
+<span>{{inputName}}</span>
+
+<ul class="cards">
+  <li class="card">
+    <div class="card__img">
+      <img src="{{src}}" alt="{{alt}}" width="200" loading="lazy">
+    </div>
+    <div class="card__fotter">
+      <h3 class="footer__model">{{modelo}}</h3>
+    </div>
+  </li>
+
+  <li class="card">
+    <div class="card__img">
+      <img [src]="src2" [alt]="alt2" width="200" loading="lazy">
+    </div>
+    <div class="card__fotter">
+      <h3 class="footer__model">{{modelo2}}</h3>
+    </div>
+  </li>
+</ul>
+
+

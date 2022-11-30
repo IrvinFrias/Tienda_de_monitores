@@ -1,0 +1,11 @@
+.cards{
+  width: 100%;
+  display: flex;
+}
+.card{
+  list-style: none;
+  background-color: #f5f6f7;
+  width: 20%;
+  text-align: center;
+  margin: 0 0 0 1rem;
+}
