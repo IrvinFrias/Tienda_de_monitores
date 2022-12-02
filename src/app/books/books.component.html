@@ -1,26 +1,37 @@
 <h1>Dell Monitors List!</h1>
-<button type="button" (click)="handleClick()" [disabled]="isDisable">Show Dell monitors</button>
-<input type="text" [(ngModel)]="inputName" />
-<span>{{inputName}}</span>
+<button type="button" (click)="isShowing = !isShowing">
+  <ng-container *ngIf="!isShowing">Mostrar monitores Dell</ng-container>
+  <ng-container *ngIf="isShowing">Ocultar monitores Dell</ng-container>
+</button>
 
-<ul class="cards">
-  <li class="card">
-    <div class="card__img">
-      <img src="{{src}}" alt="{{alt}}" width="200" loading="lazy">
-    </div>
-    <div class="card__fotter">
-      <h3 class="footer__model">{{modelo}}</h3>
-    </div>
-  </li>
 
-  <li class="card">
-    <div class="card__img">
-      <img [src]="src2" [alt]="alt2" width="200" loading="lazy">
-    </div>
-    <div class="card__fotter">
-      <h3 class="footer__model">{{modelo2}}</h3>
-    </div>
-  </li>
+<ul *ngIf="isShowing" class="cards">
+  <ng-container *ngFor="let monitor of monitors">
+    <li class="card" >
+      <div class="card__img">
+        <img src="{{monitor.src}}" alt="{{monitor.alt}}" width="300" loading="lazy">
+      </div>
+      <span class="card__dell">Dell</span>
+      <div class="card__fotter">
+        <h3 class="footer__model">{{monitor.modelo | titlecase}}</h3> <!--  Angular Pipe https://angular.io/guide/pipes-overview  -->
+        <a class="footer_doc" href="#">Documentación</a>
+        <span class="footer__price">{{monitor.price  | currency: 'MXN'}} </span>
+        <span class="footer__taxes">{{(monitor.price * (1/1.16)) | currency}} $ excluyendo el IVA . Entrega
+        gratuita</span>
+        <a  class="footer__datesDelivery" href="#">Ver fechas de entrega</a>
+        <span class="footer__paypal">Compra ahora y paga después con <strong>Paypal</strong>.
+        <a class="footer_moreInformation">Más información</a></span>
+      </div>
+      <div class="card__buttons">
+        <button type="button" class="btn__carrito">Añadir al carrito</button>
+        <button type="button" class="btn__comprar">Comprar</button>
+      </div>
+    </li>
+
+  </ng-container>
+
+
+
 </ul>
 
 
