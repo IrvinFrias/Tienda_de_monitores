@@ -1,22 +1,19 @@
-  import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BooksComponent } from './books/books.component';
-  import {FormsModule} from "@angular/forms";
-import { MonitorComponent } from './monitor/monitor.component';
+import {FormsModule} from "@angular/forms";
+import {BooksModule} from "./books/books.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BooksComponent,
-    MonitorComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BooksModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,55 +1,40 @@
-import {Component, OnInit} from '@angular/core';
-interface Monitor{
-  alt: string
-  modelo: string
-  src: string
-  price: number
-}
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Monitor} from "../types/Monitor";
+import {BooksService} from "./books.service";
 
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent implements OnInit{
-  monitors: Monitor[] = [
-    {
-      alt: 'monitor 24 inches',
-      modelo: 'Monitor Dell 24 - P2422H',
-      src: 'https://snpi.dell.com/snp/images/products/large/es-es~210-AZYX/210-AZYX.jpg',
-      price:1000
+export class BooksComponent implements OnInit, OnDestroy{
+  monitors: Monitor[] = [];
 
-    },
-    {
-      alt: 'monitor 24 inches',
-      modelo: ' monitor Dell UltraSharp 24 - U2422H',
-      src: 'https://snpi.dell.com/snp/images/products/large/es-es~210-AYUI/210-AYUI.JPG',
-      price:2000
+  card: Monitor[] = [];
 
-    },
-    {
-      alt: 'monitor 24 inches',
-      modelo: ' monitor Dell 24 - S2421HS',
-      src: 'https://snpi.dell.com/snp/images/products/large/es-es~210-AXKQ_V4/210-AXKQ_V4.jpg',
-      price:3000
-    },
-    {
-      alt: 'monitor 24 inches',
-      modelo: ' monitor Dell 24 con concentrador USB-C: P2423DE',
-      src: 'https://snpi.dell.com/snp/images/products/large/es-es~210-BDDW/210-BDDW.jpg',
-      price:4000
-    }
-  ]
-
-
-  constructor() {
+  constructor(private booksService: BooksService) { //Dependency Injection
+    // the construtor is the first thing execute whe the user load the page.
+    //console.log({onConstructor: 'first thing that renders'});
   }
 
   isShowing: boolean = true;
 
 
-  ngOnInit(): void{
+
+ /*Lyfe cicle of the component*/
+  ngOnInit(): void{ //here we can fetch some data from API because is the second one thing that execute when we run
+    // the app.
+    //console.log({onInit: 'second thing that renders'});
+    this.monitors = this.booksService.getBooks();
+
+  }
+  ngOnDestroy(): void {
 
   }
 
+  /*Methods*/
+  addToCard(event : Monitor): void{
+    this.card.push(event);
+    console.log(this.card);
+  }
 }

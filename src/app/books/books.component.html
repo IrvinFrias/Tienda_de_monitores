@@ -5,33 +5,10 @@
 </button>
 
 
-<ul *ngIf="isShowing" class="cards">
-  <ng-container *ngFor="let monitor of monitors">
-    <li class="card" >
-      <div class="card__img">
-        <img src="{{monitor.src}}" alt="{{monitor.alt}}" width="300" loading="lazy">
-      </div>
-      <span class="card__dell">Dell</span>
-      <div class="card__fotter">
-        <h3 class="footer__model">{{monitor.modelo | titlecase}}</h3> <!--  Angular Pipe https://angular.io/guide/pipes-overview  -->
-        <a class="footer_doc" href="#">Documentación</a>
-        <span class="footer__price">{{monitor.price  | currency: 'MXN'}} </span>
-        <span class="footer__taxes">{{(monitor.price * (1/1.16)) | currency}} $ excluyendo el IVA . Entrega
-        gratuita</span>
-        <a  class="footer__datesDelivery" href="#">Ver fechas de entrega</a>
-        <span class="footer__paypal">Compra ahora y paga después con <strong>Paypal</strong>.
-        <a class="footer_moreInformation">Más información</a></span>
-      </div>
-      <div class="card__buttons">
-        <button type="button" class="btn__carrito">Añadir al carrito</button>
-        <button type="button" class="btn__comprar">Comprar</button>
-      </div>
-    </li>
-
+<ul *ngIf="isShowing" class="cards" >
+  <ng-container *ngFor="let singleMonitor of monitors">
+    <app-monitor class="cards__card" (monitorEmitter)="addToCard($event)" [monitor]="singleMonitor"></app-monitor>
   </ng-container>
-
-
-
 </ul>
 
 
