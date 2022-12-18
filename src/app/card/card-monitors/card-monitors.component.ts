@@ -23,7 +23,7 @@ export class CardMonitorsComponent implements OnInit, OnDestroy{
 
 
   ngOnDestroy(): void{
-    console.log('hola');
+    console.log('item from card deleted');
   }
 
 }

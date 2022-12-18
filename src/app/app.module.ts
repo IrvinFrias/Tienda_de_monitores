@@ -6,12 +6,14 @@ import {FormsModule} from "@angular/forms";
 import {BooksModule} from "./books/books.module";
 import { CardComponent } from './card/card.component';
 import { CardMonitorsComponent } from './card/card-monitors/card-monitors.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    CardMonitorsComponent
+    CardMonitorsComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

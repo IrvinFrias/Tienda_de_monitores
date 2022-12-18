@@ -39,7 +39,8 @@
 
 /*buttons*/
 .card__buttons{
-  margin: 1.5rem 0 0;
+  width: 90%;
+  margin: 1.5rem 0 0 0;
   display: flex;
   justify-content: space-between;
 }
