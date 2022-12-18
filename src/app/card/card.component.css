@@ -1,14 +1,23 @@
 .principal-container{
-  width: 100%;
+  width: 95%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0;
-  margin: 0;
+  padding: 4rem 0 0 0;
+  margin: 0 auto;
+}
+.component__title{
+  padding: 5rem 0 0 0;
+  width: 95%;
+  margin: 0 auto;
 }
 .card{
   width: calc((100% / 4) - 5rem);
   padding-left: 1rem;
+}
+.hola{
+  font-size: 3rem;
+  color: blue;
 }
 
 /* Large devices (laptops/desktops, 1200px and down) */
