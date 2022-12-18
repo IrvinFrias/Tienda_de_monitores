@@ -10,7 +10,6 @@ import {BooksService} from "./books.service";
 export class BooksComponent implements OnInit, OnDestroy{
   monitors: Monitor[] = [];
 
-  card: Monitor[] = [];
 
   constructor(private booksService: BooksService) { //Dependency Injection
     // the construtor is the first thing execute whe the user load the page.
@@ -33,8 +32,5 @@ export class BooksComponent implements OnInit, OnDestroy{
   }
 
   /*Methods*/
-  addToCard(event : Monitor): void{
-    this.card.push(event);
-    console.log(this.card);
-  }
+
 }

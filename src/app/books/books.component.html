@@ -7,7 +7,7 @@
 
 <ul *ngIf="isShowing" class="cards" >
   <ng-container *ngFor="let singleMonitor of monitors">
-    <app-monitor class="cards__card" (monitorEmitter)="addToCard($event)" [monitor]="singleMonitor"></app-monitor>
+    <app-monitor class="cards__card"  [monitor]="singleMonitor"></app-monitor> <!--Para emit eventos (monitorEmitter)="addToCard($event)" -->
   </ng-container>
 </ul>
 

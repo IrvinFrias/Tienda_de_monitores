@@ -1,0 +1,7 @@
+<h1 *ngIf="card.length !== 0"> Carrito de compras</h1>
+<ul class="principal-container">
+  <ng-container *ngFor=" let monitor of card">
+    <app-card-monitors class="card"  [monitorCard]="monitor"></app-card-monitors>
+  </ng-container>
+</ul>
+

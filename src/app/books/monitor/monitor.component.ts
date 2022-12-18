@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Monitor} from "../../types/Monitor";
+import {CardService} from "../../services/card.service";
 
 
 @Component({
@@ -11,15 +12,24 @@ export class MonitorComponent implements OnInit, OnDestroy{
   @Input() monitor: Monitor = {} as Monitor; //sharing data from parent to child
   // https://angular.io/guide/inputs-outputs
   isShowing: boolean = true;
-  @Output() monitorEmitter = new EventEmitter<Monitor>;//sharing data from child to parent
+  //@Output() monitorEmitter = new EventEmitter<Monitor>;//sharing data from child to parent
   //https://angular.io/guide/inputs-outputs#sending-data-to-a-parent-component
 
-  constructor() {
+  isInCard: boolean = false;
+
+  constructor(private cardService: CardService ) {
   }
 
   /*Methods*/
   addToCard(): void {
-    this.monitorEmitter.emit(this.monitor)
+    this.isInCard = true;
+    this.cardService.add(this.monitor);
+    //this.monitorEmitter.emit(this.monitor)
+  }
+
+  removeFromCard(): void{
+    this.isInCard = false;
+    this.cardService.remove(this.monitor);
   }
 
   /*Lifecycle*/
