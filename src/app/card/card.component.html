@@ -1,4 +1,16 @@
-<h1 class="component__title">Carrito de compras</h1>
+<h1 *ngIf="card.length !== 0" class="component__title">Carrito de compras</h1>
+
+<div *ngIf="card.length === 0" class="card__empty">
+  <img class="card__img"  src="assets/Card/empty-cart-01-01.svg" alt="carrito vacio">
+  <div>
+    <h2>Lo sentimos aún no ha agregado algún producto en el carrito</h2>
+    <p>consulte la lista de monitores en nuestro catálogo</p>
+    <button class="btn__empty" type="button" routerLink="/">Mostrar catálogo</button>
+  </div>
+
+</div>
+
+
 <ul class="principal-container">
   <ng-container *ngFor=" let monitor of card">
     <app-card-monitors class="card"  [monitorCard]="monitor"></app-card-monitors>

@@ -9,6 +9,7 @@ import { CardMonitorsComponent } from './card/card-monitors/card-monitors.compon
 import { NavComponent } from './nav/nav.component';
 import {AuthModule} from "./auth/auth.module";
 import { FooterComponent } from './footer/footer.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     CardComponent,
     CardMonitorsComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,31 @@
   width: calc((100% / 4) - 5rem);
   padding-left: 1rem;
 }
+.card__empty{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 7rem 0 0 0;
+}
+.card__img{
+  display: block;
+  width: 450px;
+  margin-right: 4rem;
+}
+.btn__empty{
+  padding: 0.7rem;
+  width: 200px;
+  background-color: #ffdc00;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.btn__empty:hover{
+  background-color: #131313;
+  color: #f5f6f7;
+}
 .hola{
   font-size: 3rem;
   color: blue;
@@ -33,12 +58,19 @@
   .card{
     width: calc((100% / 2) - 3rem);
   }
+  .card__img{
+    padding-top: 3rem;
+  }
 
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .card{
     width: 100%
+  }
+  .card__img{
+    padding-top: 3rem;
+    width: 360px;
   }
 
 }
