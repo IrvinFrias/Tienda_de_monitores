@@ -1,11 +1,18 @@
 <div class="nav__container">
   <nav class="nav">
-    <picture class="img__container">
-      <img class="nav__img" src="favicon.ico" alt="logo">
-    </picture>
-    <ul class="nav__list">
-      <li routerLink="/" class="nav__item">Home</li>
-      <li routerLink="/card" class="nav__item">card</li>
+    <div class="nav__menu">
+      <picture class="img__container">
+        <a routerLink="/"><img class="nav__img" src="favicon.ico" alt="logo"></a>
+      </picture>
+      <ul class="nav__list">
+        <li class="nav__item"><a routerLink="/" class="nav__link">Home</a></li>
+        <li class="nav__item"><a routerLink="/card" class="nav__link">card</a></li>
+      </ul>
+    </div>
+
+    <ul class="login">
+      <li class="nav__item"><a routerLink="/login" class="nav__link">Login</a></li>
+      <li class="nav__item"><a routerLink="/register" class="nav__link">Register</a></li>
     </ul>
   </nav>
 </div>
