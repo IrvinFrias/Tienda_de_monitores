@@ -1,21 +1,34 @@
 <div class="form__container">
   <img class="form__img" src="assets/Login-Register/register-01.svg">
-  <form class="form">
+  <form (ngSubmit)="submit()" class="form" #myForm="ngForm">
     <h1 class="form__title">Register</h1>
     <div class="form__field">
       <label class="form__label" for="text-name">Email</label>
-      <input type="email" id="text-name" placeholder="user name" autofocus>
+      <input type="email" id="text-name" placeholder="user name" autofocus [(ngModel)]="form.email" name="email"
+             #email="ngModel" required>
     </div>
-    <div class="form__field">
+    <div *ngIf="email.valid && (email.dirty || email.touched)" class="email__validation">
+      Email field must be valid
+    </div>
+    <div  class="form__field">
       <label class="form__label" for="user-password">Password</label>
-      <input type="password" id="user-password" placeholder="password" >
+      <input type="password" id="user-password" placeholder="password" [(ngModel)]="form.password" name="password"
+             required #password="ngModel" >
     </div>
+    <div *ngIf="password.valid && (password.dirty || password.touched)" class="email__validation">
+      Password field must be valid
+    </div>
+
     <div class="form__field">
       <label class="form__label" for="user-password-confirmed">Confirm Password</label>
-      <input type="password" id="user-password-confirmed" placeholder="Confirm password" >
+      <input type="password" id="user-password-confirmed" placeholder="Confirm password" [(ngModel)]="form.password"
+            required #confirmpassword="ngModel" >
+    </div>
+    <div *ngIf="confirmpassword.valid &&(confirmpassword.dirty ||confirmpassword.touched)" class="email__validation">
+      Confirm password field must be valid
     </div>
     <div class="form__field">
-      <input type="submit" id="submit" value="Submit" >
+      <input type="submit" id="submit" value="Submit" [disabled]="myForm.form.invalid" >
     </div>
   </form>
 </div>

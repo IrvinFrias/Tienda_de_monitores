@@ -7,6 +7,7 @@ import {BooksModule} from "./books/books.module";
 import { CardComponent } from './card/card.component';
 import { CardMonitorsComponent } from './card/card-monitors/card-monitors.component';
 import { NavComponent } from './nav/nav.component';
+import {AuthModule} from "./auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -18,8 +19,8 @@ import { NavComponent } from './nav/nav.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    BooksModule
+    BooksModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
