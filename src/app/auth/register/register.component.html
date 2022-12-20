@@ -29,7 +29,10 @@
       Confirm password field must be valid
     </div>
     <div class="form__field">
-      <input type="submit" id="submit" value="Submit" [disabled]="myForm.form.invalid" >
+      <button id="submit" type="submit" [disabled]="myForm.form.invalid">
+        <ng-container *ngIf="isLogin">Loading...</ng-container>
+        <ng-container *ngIf="!isLogin">Submit</ng-container>
+      </button>
     </div>
   </form>
 </div>

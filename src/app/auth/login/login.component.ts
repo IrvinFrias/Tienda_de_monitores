@@ -16,6 +16,7 @@ export class LoginComponent {
   isLogin: boolean = false;
   submit(): void{
     if (this.isLogin) return;
+
     this.isLogin = true;
     const auth = getAuth();
     signInWithEmailAndPassword(auth,this.form.email, this.form.password)

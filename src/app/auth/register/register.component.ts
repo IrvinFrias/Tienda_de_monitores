@@ -14,8 +14,11 @@ export class RegisterComponent {
     confirmPassword: ''
   }
   passwordMatched:boolean = false;
+  isLogin: boolean = false;
 
   submit(): void{
+    if(this.isLogin) return;
+    this.isLogin = true;
     if(this.form.password !== this.form.confirmPassword){
       this.passwordMatched = false;
       return;
@@ -32,7 +35,7 @@ export class RegisterComponent {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
-      });
+      }).finally(()=>this.isLogin = false);
 
 
   }
