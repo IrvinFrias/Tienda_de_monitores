@@ -13,7 +13,7 @@
     <div  class="form__field">
       <label class="form__label" for="user-password">Password</label>
       <input type="password" id="user-password" placeholder="password" [(ngModel)]="form.password" name="password"
-             required #password="ngModel" >
+             required #password="ngModel" autocomplete="on" >
     </div>
     <div *ngIf="password.valid && (password.dirty || password.touched)" class="email__validation">
       Password field must be valid
@@ -21,8 +21,9 @@
 
     <div class="form__field">
       <label class="form__label" for="user-password-confirmed">Confirm Password</label>
-      <input type="password" id="user-password-confirmed" placeholder="Confirm password" [(ngModel)]="form.password"
-            required #confirmpassword="ngModel" >
+      <input type="password" id="user-password-confirmed" placeholder="Confirm password"
+             [(ngModel)]="form.confirmPassword" name="confirmPassword"
+            required #confirmpassword="ngModel" autocomplete="on">
     </div>
     <div *ngIf="confirmpassword.valid &&(confirmpassword.dirty ||confirmpassword.touched)" class="email__validation">
       Confirm password field must be valid
