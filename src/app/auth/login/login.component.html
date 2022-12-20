@@ -21,8 +21,8 @@
       </div>
       <div class="form__field">
         <button id="submit" type="submit" [disabled]="myForm.form.invalid">
-          <ng-container *ngIf="isLogin">Loading...</ng-container>
-          <ng-container *ngIf="!isLogin">Submit</ng-container>
+          <ng-container *ngIf="isLogin()">Loading...</ng-container>
+          <ng-container *ngIf="!isLogin()">Submit</ng-container>
         </button>
       </div>
   </form>

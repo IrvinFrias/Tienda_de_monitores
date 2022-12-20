@@ -6,13 +6,18 @@
       </picture>
       <ul class="nav__list">
         <li class="nav__item"><a routerLink="/" class="nav__link">Home</a></li>
-        <li class="nav__item"><a routerLink="/card" class="nav__link">card</a></li>
+        <li *ngIf="isAuthenticated()" class="nav__item"><a routerLink="/card" class="nav__link">Cart</a></li>
       </ul>
     </div>
 
     <ul class="login">
-      <li class="nav__item"><a routerLink="/login" class="nav__link">Login</a></li>
-      <li class="nav__item"><a routerLink="/register" class="nav__link">Register</a></li>
+      <ng-container *ngIf="!isAuthenticated()">
+        <li class="nav__item"><a routerLink="/login" class="nav__link">Login</a></li>
+        <li class="nav__item"><a routerLink="/register" class="nav__link">Register</a></li>
+      </ng-container>
+      <ng-container *ngIf="isAuthenticated()">
+        <li><button class="nav__logout" (click)="logOut()" type="button">Logout</button></li>
+      </ng-container>
     </ul>
   </nav>
 </div>

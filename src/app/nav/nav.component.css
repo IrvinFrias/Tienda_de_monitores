@@ -46,3 +46,13 @@
   color: #ffdc00;
   border-bottom: #f5f6f7 2px solid;
 }
+.nav__logout{
+  padding: 0.5rem;
+  background-color: #ffdc00;
+  color: #131313;
+  border-radius: 5px;
+}
+.nav__logout:hover{
+  background-color: white;
+  color: #131313;
+}
