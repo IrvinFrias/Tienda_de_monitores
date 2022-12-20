@@ -4,12 +4,14 @@ import {BooksComponent} from "./books/books.component";
 import {CardComponent} from "./card/card.component";
 import {LoginComponent} from "./auth/login/login.component";
 import {RegisterComponent} from "./auth/register/register.component";
+import {ErrorPageComponent} from "./error-page/error-page.component";
 
 const routes: Routes = [
   {path: '', component: BooksComponent },
   {path: 'card', component: CardComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'error', component: ErrorPageComponent }
 ];
 
 @NgModule({
